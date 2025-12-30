@@ -3,11 +3,18 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Pixel Art Nostalgia Design Theme
+ * Movement: 8-bit/16-bit inspired neo-pixelism with modern color theory
+ * Color Philosophy: Warm earth tones (#8B7355 brown, #6B8E23 olive green) with bright accents (#FFD700 golden harvest, #87CEEB sky blue)
+ * Typography: Press Start 2P for titles/UI, Silkscreen for body text - all monospace pixel fonts
+ * Layout: Fixed grid system with pixel-perfect alignment
+ */
+
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -40,85 +47,63 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --font-pixel-title: 'Press Start 2P', monospace;
+  --font-pixel-body: 'Silkscreen', monospace;
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
-}
-
-.dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  /* Pixel Art Color Palette - Earth Tones & Bright Accents */
+  --primary: oklch(0.55 0.08 60); /* #8B7355 Brown earth */
+  --primary-foreground: oklch(0.98 0.01 90); /* Light beige */
+  --sidebar-primary: oklch(0.50 0.10 120); /* #6B8E23 Olive green */
+  --sidebar-primary-foreground: oklch(0.98 0.01 90);
+  --chart-1: oklch(0.85 0.15 100); /* Golden */
+  --chart-2: oklch(0.60 0.12 120); /* Green */
+  --chart-3: oklch(0.70 0.08 60); /* Brown */
+  --chart-4: oklch(0.75 0.10 200); /* Sky blue */
+  --chart-5: oklch(0.65 0.15 30); /* Orange */
+  --radius: 0px; /* No rounded corners for pixel art */
+  --background: oklch(0.95 0.02 90); /* #F5E6D3 Light beige background */
+  --foreground: oklch(0.25 0.02 60); /* #3E2723 Dark brown text */
+  --card: oklch(0.92 0.02 80); /* Slightly darker beige */
+  --card-foreground: oklch(0.25 0.02 60);
+  --popover: oklch(0.92 0.02 80);
+  --popover-foreground: oklch(0.25 0.02 60);
+  --secondary: oklch(0.88 0.03 90); /* Light tan */
+  --secondary-foreground: oklch(0.30 0.02 60);
+  --muted: oklch(0.85 0.03 90);
+  --muted-foreground: oklch(0.45 0.02 60);
+  --accent: oklch(0.85 0.15 100); /* #FFD700 Golden accent */
+  --accent-foreground: oklch(0.25 0.02 60);
+  --destructive: oklch(0.55 0.20 25); /* Red-orange */
+  --destructive-foreground: oklch(0.98 0.01 90);
+  --border: oklch(0.40 0.03 60); /* #6D4C41 Dark brown border */
+  --input: oklch(0.88 0.03 90);
+  --ring: oklch(0.55 0.08 60);
+  --sidebar: oklch(0.92 0.02 80);
+  --sidebar-foreground: oklch(0.25 0.02 60);
+  --sidebar-accent: oklch(0.85 0.15 100);
+  --sidebar-accent-foreground: oklch(0.25 0.02 60);
+  --sidebar-border: oklch(0.40 0.03 60);
+  --sidebar-ring: oklch(0.55 0.08 60);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-pixel-body);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-pixel-title);
+    line-height: 1.4;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -131,27 +116,21 @@
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
   }
+  
+  /* Pixel-perfect rendering */
+  canvas {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -162,16 +141,32 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
+  }
+  
+  /* Pixel art specific utilities */
+  .pixel-border {
+    border: 3px solid var(--border);
+    box-shadow: 
+      0 0 0 1px var(--border),
+      inset 0 0 0 1px var(--border);
+  }
+  
+  .pixel-panel {
+    background: var(--card);
+    border: 4px solid var(--border);
+    box-shadow: 
+      inset 2px 2px 0 rgba(255, 255, 255, 0.3),
+      inset -2px -2px 0 rgba(0, 0, 0, 0.3);
   }
 }
